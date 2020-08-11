@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hailin.admin.dao.CandidateDao">
+
+    <update id="update"  >
+        UPDATE config_candidate SET based_version=#{candidate.basedVersion},edit_version=edit_version+1,status=#{candidate.status}
+        WHERE group_id=#{candidate.group} AND profile=#{candidate.profile} AND data_id=#{candidate.dataId} AND edit_version=${candidate.editVersion - 1 } AND status=#{sourceStatus}
+    </update>
+</mapper>

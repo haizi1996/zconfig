@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hailin.admin.dao.CandidateSnapshotDao">
+
+    <select id="getPublicType" resultType="com.hailin.server.common.bean.CandidateSnapshot">
+        SELECT group_id,data_id,profile,based_version,edit_version,content,status,operator FROM config_candidate_snapshot WHERE group_id=#{group} AND profile=#{profile} AND data_id= #{dataId}  AND edit_version= #{editVersion}
+    </select>
+
+    <insert id="save" parameterType="com.hailin.server.common.bean.CandidateSnapshot" >
+        insert into config_candidate_snapshot(group_id,data_id,profile,based_version,edit_version,content,status,operator,create_time)
+        values(#{group},#{dataId},#{profile},#{baseVersion},#{editVersion},#{content},#{status},#{operator},now())
+    </insert>
+</mapper>

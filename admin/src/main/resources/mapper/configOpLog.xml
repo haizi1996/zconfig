@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hailin.admin.dao.ConfigOpLogDao">
+
+    <update id="selectRecent"  >
+        select group_id, data_id, profile, based_version, edit_version,
+        operator, operation_type, remarks, inet_ntoa(ip) as ip, operation_time from config_op_log
+        where group_id = #{meta.group} and data_id = #{meta.dataId} and profile = #{meta.profile} and based_version=#{baseVersion}
+        order by edit_version desc, operation_time desc limit 0, #{length}
+     </update>
+</mapper>

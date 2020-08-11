@@ -5,6 +5,7 @@ import com.hailin.zconfig.client.Feature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public abstract class AbstractConfiguration<T> implements Configuration<T> {
@@ -28,5 +29,9 @@ public abstract class AbstractConfiguration<T> implements Configuration<T> {
     public AbstractConfiguration(Feature feature, String fileName) {
         this.feature = feature;
         this.fileName = fileName;
+    }
+
+    public interface Parser<T> {
+        T parse(String data) throws IOException;
     }
 }

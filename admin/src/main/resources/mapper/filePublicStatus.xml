@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hailin.admin.dao.FilePublicStatusDao">
+    <select id="getPublicType" resultType="Integer">
+        SELECT type FROM file_public_status WHERE group_id = #{group} AND data_id = #{dataId}
+    </select>
+</mapper>
