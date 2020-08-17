@@ -26,4 +26,11 @@ public interface EventPostApplyService {
      * 删除(逻辑删除)
      */
     void delete(CandidateDTO dto, String s);
+
+    /**
+     *  拒绝
+     */
+    void reject(CandidateDTO candidate, String s);
+
+    void publish(CandidateDTO candidate, String s);
 }

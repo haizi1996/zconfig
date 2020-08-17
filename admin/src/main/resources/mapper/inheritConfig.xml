@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hailin.admin.dao.InheritConfigDao">
+
+
+    <insert id="save" parameterType="reference" >
+        INSERT INTO config_reference(group_id,alias,profile,ref_group_id,ref_data_id,ref_profile,operator, type)
+        VALUES(#{group},#{alias},#{profile},#{refGroup},#{refDataId},#{refProfile},#{operator},#{type})
+    </insert>
+</mapper>

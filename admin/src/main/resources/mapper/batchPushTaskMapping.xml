@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hailin.admin.dao.BatchPushTaskMappingDao">
+
+    <insert id="insert" >
+        INSERT IGNORE INTO batch_push_task_mapping(group_id, data_id, profile, uuid) VALUES (#{meta.group}, #{meta.dataId}, #{meta.profile}, #{uuid})
+    </insert>
+</mapper>

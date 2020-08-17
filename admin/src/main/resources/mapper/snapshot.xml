@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hailin.admin.dao.SnapshotDao">
+
+    <insert id="save" parameterType="com.hailin.server.common.bean.Candidate" >
+        INSERT IGNORE INTO config_snapshot(group_id,data_id,profile,based_version,version,checksum,content)
+        VALUES(#{meta.group},#{meta.dataId},#{meta.profile},#{basedVersion},#{editVersion},#{checksum},#{content})
+    </insert>
+</mapper>

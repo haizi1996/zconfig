@@ -9,4 +9,6 @@ import org.apache.ibatis.annotations.Param;
 public interface CandidateDao {
 
     int update(@Param("candidate")Candidate candidate, @Param("sourceStatus") StatusType statusType );
+
+    void save(Candidate candidate);
 }

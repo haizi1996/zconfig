@@ -8,6 +8,7 @@ import com.hailin.admin.dao.DefaultTemplateConfigMappingDao;
 import com.hailin.admin.dao.FileTemplateDao;
 import com.hailin.admin.dao.FileTemplateMappingDao;
 import com.hailin.admin.dao.FileTemplateMappingVersionDao;
+import com.hailin.admin.dto.CandidateDTO;
 import com.hailin.admin.entity.TemplateInfo;
 import com.hailin.admin.model.KeyValuePair;
 import com.hailin.admin.model.TemplateType;
@@ -129,5 +130,10 @@ public class FileTemplateServiceImpl implements FileTemplateService {
             LOG.error("校验反序列化失败");
         }
         return "";
+    }
+
+    @Override
+    public void setPropertiesTemplate(CandidateDTO dto) {
+
     }
 }

@@ -20,7 +20,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -62,6 +64,44 @@ public class ActionController extends AbstractControllerHelper {
             return JsonV2.success();
         }catch (Exception e){
             return handleException(candidate , e);
+        }
+    }
+
+    @RequestMapping(value = "/forceCreate", method = RequestMethod.POST)
+    @ResponseBody
+    public Object forceApply(@RequestBody CandidateDTO candidate) {
+        checkApply(candidate);
+        try {
+            applyService.forceApply(candidate, "");
+            return JsonV2.success();
+        } catch (Exception e) {
+            return handleException(candidate, e);
+        }
+    }
+
+    @RequestMapping(value = "/reject", method = RequestMethod.POST)
+    @ResponseBody
+    public Object reject(@RequestBody CandidateDTO candidate) {
+        LOGGER.info("reject with {}", candidate);
+        checkCandidate(candidate);
+        try {
+            applyService.reject(candidate, "");
+            return JsonV2.success();
+        } catch (Exception e) {
+            return handleException(candidate, e);
+        }
+    }
+
+    @RequestMapping(value = "/publish", method = RequestMethod.POST)
+    @ResponseBody
+    public Object publish(@RequestBody CandidateDTO candidate) {
+        LOGGER.info("publish with {}", candidate);
+        checkCandidate(candidate);
+        try {
+            applyService.publish(candidate, "");
+            return JsonV2.success();
+        } catch (Exception e) {
+            return handleException(candidate, e);
         }
     }
 

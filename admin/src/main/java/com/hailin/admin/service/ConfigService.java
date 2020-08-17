@@ -15,4 +15,6 @@ public interface ConfigService {
     VersionData<String> getCurrentPublishedData(ConfigMeta meta);
 
     String templateDataLongToStr(String group, String dataId, String data);
+
+    CandidateSnapshot publish(CandidateSnapshot changeStatusAndSave) throws ModifiedException;
 }

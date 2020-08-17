@@ -10,4 +10,12 @@
         SELECT group_id,profile,data_id,version,public_status,update_time FROM config WHERE group_id=#{group} AND data_id=#{dataId} AND profile=#{profile}
     </select>
 
+    <insert id="create" >
+        INSERT INTO config(group_id,data_id,profile,version,create_time) VALUES(#{meta.group},#{meta.dataId},#{meta.profile},#{version},now())
+    </insert>
+
+    <update id="update">
+        UPDATE config SET version=#{editVersion},public_status=#{inuse} WHERE group_id=#{meta.group} AND data_id=#{meta.dataId} AND profile=#{meta.profile} AND version=#{version}
+    </update>
+
 </mapper>

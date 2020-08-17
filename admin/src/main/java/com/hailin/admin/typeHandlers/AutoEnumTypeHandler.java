@@ -1,6 +1,7 @@
 package com.hailin.admin.typeHandlers;
 
 import com.hailin.admin.model.TemplateType;
+import com.hailin.server.common.bean.PublicStatus;
 import com.hailin.zconfig.common.bean.StatusType;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.EnumTypeHandler;
@@ -25,6 +26,8 @@ public class AutoEnumTypeHandler<E extends Enum<E>> extends BaseTypeHandler<E> {
             typeHandler = new TemplateTypeHandler(type);
         }else if(Objects.equals(StatusType.class , type)){
             typeHandler = new CandidateStatusTypeHandler(type);
+        }else if(Objects.equals(PublicStatus.class , type)){
+            typeHandler = new PublicStatusTypeHandler(type);
         }else {
             // 默认转换器 也可换成 EnumOrdinalTypeHandler
             typeHandler = new EnumTypeHandler<>(type);

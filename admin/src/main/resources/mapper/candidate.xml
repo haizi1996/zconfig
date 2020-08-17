@@ -6,4 +6,9 @@
         UPDATE config_candidate SET based_version=#{candidate.basedVersion},edit_version=edit_version+1,status=#{candidate.status}
         WHERE group_id=#{candidate.group} AND profile=#{candidate.profile} AND data_id=#{candidate.dataId} AND edit_version=${candidate.editVersion - 1 } AND status=#{sourceStatus}
     </update>
+
+    <insert id="save" parameterType="com.hailin.server.common.bean.Candidate" >
+        INSERT INTO config_candidate(group_id,data_id,profile,based_version,edit_version,status,create_time)
+        VALUES(#{group},#{dataId},#{profile},#{basedVersion},#{editVersion},#{status},now())
+    </insert>
 </mapper>

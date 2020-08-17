@@ -1,5 +1,6 @@
 package com.hailin.admin.service;
 
+import com.hailin.admin.dto.CandidateDTO;
 import com.hailin.admin.entity.TemplateInfo;
 import com.hailin.admin.model.KeyValuePair;
 import com.hailin.server.common.bean.ConfigMeta;
@@ -15,4 +16,6 @@ public interface FileTemplateService {
     void deleteDefaultConfigId(ConfigMeta configMeta);
 
     Optional<String> getTemplateDetailByFile(String group, String dataId);
+
+    void setPropertiesTemplate(CandidateDTO dto);
 }
