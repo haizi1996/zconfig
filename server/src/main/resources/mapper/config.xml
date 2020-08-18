@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hailin.server.dao.ConfigDao">
+    
+    <resultMap id="versionData" type="com.hailin.server.common.bean.VersionData">
+        <id column="id" />
+        <result property="version" column="version"/>
+        <association property="data" javaType="com.hailin.server.common.bean.ConfigMeta">
+            <result column="group_id" property="group"/>
+            <result column="data_id" property="dataId"/>
+            <result column="profile" property="profile"/>
+        </association>
+    </resultMap>
+
+    <select id="loadAll" parameterType="com.hailin.server.common.bean.ConfigMeta" resultMap="versionData">
+        SELECT  group_id,data_id,profile,version FROM config WHERE public_status!=2
+    </select>
+
+
+
+</mapper>

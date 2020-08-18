@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hailin.server.dao.FixedConsumerVersionDao">
+
+    <resultMap id="metaType"  type="com.hailin.server.common.bean.KeyValuePair">
+        <id column="id"/>
+        <result property="value" column="version" javaType="string"/>
+        <association property="key" javaType="com.hailin.server.common.bean.MetaIp" >
+            <id column="id"/>
+            <result column="ip" property="ip" javaType="string"/>
+            <association property="meta" javaType="com.hailin.server.common.bean.ConfigMeta">
+                <result property="group_id" column="group" javaType="string"></result>
+                <result property="dataId" column="data_id" javaType="string"></result>
+                <result property="profile" column="profile" javaType="string"></result>
+            </association>
+        </association>
+    </resultMap>
+
+    <select id="find" resultType="long">
+        SELECT version FROM fixed_consumer_version WHERE group_id=#{meta.group} AND data_id=#{meta.dataId} AND profile=#{meta.profile} AND ip=INET_ATON(${ip})
+    </select>
+
+    <select id="queryAll" resultMap="metaType">
+        SELECT group_id, data_id, profile, INET_NTOA(ip) AS ip, version FROM fixed_consumer_version
+    </select>
+
+</mapper>

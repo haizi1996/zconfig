@@ -1,6 +1,6 @@
 package com.hailin.admin.dao;
 
-import com.hailin.admin.model.KeyValuePair;
+import com.hailin.server.common.bean.KeyValuePair;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.hailin.admin.model;
+package com.hailin.server.common.bean;
 
 public class KeyValuePair<K, V>  {
 

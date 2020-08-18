@@ -1,9 +1,10 @@
 package com.hailin.server.service;
 
-import com.google.common.base.Optional;
 import com.hailin.server.common.bean.ConfigMeta;
 import com.hailin.server.common.bean.VersionData;
 import com.hailin.server.domain.UpdateType;
+
+import java.util.Optional;
 
 public interface CacheConfigVersionService {
 

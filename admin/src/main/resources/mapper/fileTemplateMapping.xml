@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.hailin.admin.dao.FileTemplateMappingDao">
-    <resultMap id="pair" type="com.hailin.admin.model.KeyValuePair">
+    <resultMap id="pair" type="com.hailin.server.common.bean.KeyValuePair">
         <result property="key" column="template_group"  javaType="String" />
         <result property="value" column="template"  javaType="String" />
     </resultMap>

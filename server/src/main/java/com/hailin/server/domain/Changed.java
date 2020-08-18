@@ -2,6 +2,7 @@ package com.hailin.server.domain;
 
 import com.google.common.collect.ImmutableList;
 import com.hailin.server.common.bean.ConfigMeta;
+import com.hailin.server.util.OutputUtil;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -34,7 +35,7 @@ public class Changed {
 
     public String str() {
         if (str == null) {
-            str = AbstractCheckConfigServlet.formatOutput(ImmutableList.<Changed>of(this));
+            str = OutputUtil.formatOutput(ImmutableList.<Changed>of(this));
         }
         return str;
     }

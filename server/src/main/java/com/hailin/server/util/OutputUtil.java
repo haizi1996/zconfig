@@ -1,6 +1,7 @@
 package com.hailin.server.util;
 
 import com.hailin.server.domain.Changed;
+import com.hailin.zconfig.common.util.Constants;
 
 import java.util.Collection;
 

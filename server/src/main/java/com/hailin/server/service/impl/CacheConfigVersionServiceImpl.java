@@ -1,6 +1,5 @@
 package com.hailin.server.service.impl;
 
-import com.google.common.base.Optional;
 import com.hailin.server.common.bean.ConfigMeta;
 import com.hailin.server.common.bean.VersionData;
 import com.hailin.server.config.longpolling.LongPollingStore;
@@ -15,6 +14,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.Executors;
@@ -88,7 +88,7 @@ public class CacheConfigVersionServiceImpl implements CacheConfigVersionService 
 
     @Override
     public Optional<Long> getVersion(ConfigMeta meta) {
-        return Optional.fromNullable(cache.get(meta));
+        return Optional.ofNullable(cache.get(meta));
     }
 
     @Override

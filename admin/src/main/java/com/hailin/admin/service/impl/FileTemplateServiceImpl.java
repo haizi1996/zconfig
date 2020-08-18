@@ -10,7 +10,7 @@ import com.hailin.admin.dao.FileTemplateMappingDao;
 import com.hailin.admin.dao.FileTemplateMappingVersionDao;
 import com.hailin.admin.dto.CandidateDTO;
 import com.hailin.admin.entity.TemplateInfo;
-import com.hailin.admin.model.KeyValuePair;
+import com.hailin.server.common.bean.KeyValuePair;
 import com.hailin.admin.model.TemplateType;
 import com.hailin.admin.service.FileTemplateService;
 import com.hailin.server.common.bean.ConfigMeta;

@@ -7,7 +7,7 @@ import java.util.Set;
 
 public interface LongPollingStore {
 
-//    void addListener(Listener listener);
+    void addListener(Listener listener);
 
     void manualPush(ConfigMeta meta, long version, Set<IpAndPort> ipAndPorts);
 

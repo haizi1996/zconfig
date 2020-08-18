@@ -14,7 +14,7 @@ import com.hailin.admin.exception.OnePersonPublishException;
 import com.hailin.admin.exception.StatusMismatchException;
 import com.hailin.admin.model.ApplyResult;
 import com.hailin.admin.model.Conflict;
-import com.hailin.admin.model.KeyValuePair;
+import com.hailin.server.common.bean.KeyValuePair;
 import com.hailin.admin.service.ApplyQueueService;
 import com.hailin.admin.service.CheckEnvConflictService;
 import com.hailin.admin.service.ConfigService;
@@ -44,7 +44,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 public class ApplyQueueServiceImpl implements ApplyQueueService {

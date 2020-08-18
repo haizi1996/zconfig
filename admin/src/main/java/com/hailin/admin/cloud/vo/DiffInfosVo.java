@@ -3,7 +3,7 @@ package com.hailin.admin.cloud.vo;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.google.common.collect.Lists;
 import com.hailin.admin.model.ConfigOpLog;
-import com.hailin.admin.model.KeyValuePair;
+import com.hailin.server.common.bean.KeyValuePair;
 import com.hailin.server.common.bean.ConfigMeta;
 import com.hailin.server.common.bean.VersionData;
 import lombok.Getter;

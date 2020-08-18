@@ -84,8 +84,8 @@ public class EventPostApplyServiceImpl implements EventPostApplyService {
         CandidateSnapshot snapshot = applyService.publish(candidate);
         candidate.setData(snapshot.getData());
         candidate.setSendMail(true);
-        loadDataAndPostEvent(candidate, ConfigOperationEvent.PUBLISH, remarks);
-        postCurrentConfigChangedEvent(candidate, ConfigOperationEvent.PUBLISH);
-        loadInheritdataAndPostInheritEvent(candidate);
+//        loadDataAndPostEvent(candidate, ConfigOperationEvent.PUBLISH, remarks);
+//        postCurrentConfigChangedEvent(candidate, ConfigOperationEvent.PUBLISH);
+//        loadInheritdataAndPostInheritEvent(candidate);
     }
 }

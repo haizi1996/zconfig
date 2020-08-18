@@ -9,7 +9,7 @@ import com.hailin.admin.dao.ConfigOpLogDao;
 import com.hailin.admin.dto.CandidateDTO;
 import com.hailin.admin.model.DiffCount;
 import com.hailin.admin.model.DiffResultView;
-import com.hailin.admin.model.KeyValuePair;
+import com.hailin.server.common.bean.KeyValuePair;
 import com.hailin.admin.service.DiffService;
 import com.hailin.admin.service.FileTemplateService;
 import com.hailin.admin.service.template.TemplateUtils;

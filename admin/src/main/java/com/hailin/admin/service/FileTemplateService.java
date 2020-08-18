@@ -2,7 +2,7 @@ package com.hailin.admin.service;
 
 import com.hailin.admin.dto.CandidateDTO;
 import com.hailin.admin.entity.TemplateInfo;
-import com.hailin.admin.model.KeyValuePair;
+import com.hailin.server.common.bean.KeyValuePair;
 import com.hailin.server.common.bean.ConfigMeta;
 
 import java.util.Optional;
