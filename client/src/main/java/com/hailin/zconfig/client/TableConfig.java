@@ -25,6 +25,7 @@ public class TableConfig extends AbstractConfiguration<QTable>{
         super(feature, fileName);
     }
 
+
     @Override
     public ListenableFuture<Boolean> initFuture() {
         return null;
