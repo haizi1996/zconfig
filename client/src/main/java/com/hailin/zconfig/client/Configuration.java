@@ -17,6 +17,7 @@ public interface Configuration<T> {
 
     T parse(String data) throws IOException;
 
+
     void addListener(ConfigListener<T> listener);
 
     interface ConfigListener<T> {
