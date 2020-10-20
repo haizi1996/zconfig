@@ -25,4 +25,6 @@ public class Feature {
     //是否采用https访问，默认关闭
     private final boolean httpsEnable;
 
+
+
 }
