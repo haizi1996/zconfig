@@ -12,6 +12,7 @@ public interface Configuration<T> {
 
     ListenableFuture<Boolean> initFuture();
 
+
     T emptyData();
 
     T parse(String data) throws IOException;
