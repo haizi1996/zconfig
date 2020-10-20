@@ -15,6 +15,8 @@ public interface QTable extends Table<String, String, String> {
 
     byte getByte(String row, String column);
 
+
+
     byte getByte(String row, String column, byte defaultValue);
 
     short getShort(String row, String column);
